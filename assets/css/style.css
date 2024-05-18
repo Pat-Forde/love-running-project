@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
-
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -15,11 +15,11 @@ body {
     flex-direction: column;
     /* Generic project styles */
     color: #3a3a3a;
-    font-family: 'lato',sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 h1, h2, h3 {
-    font-family: 'oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
@@ -36,31 +36,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-
 }
 
 header a {
     text-decoration: none;
     color: inherit;
-    
 }
 
 #menu {
-font-size: 110%;
-letter-spacing: 4px;
-list-style-type: none;
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
 }
 
-#menu >li {
+#menu > li {
     margin-bottom: 1em;
 }
 
 .active {
     border-bottom: 1px solid #3a3a3a;
-
 }
 
-/* Navbar styles with dropdown content */
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -69,54 +66,78 @@ nav {
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
-    top: 100%;  
+    top: 100%;
 }
 
+/* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
 }
 
 #nav-toggle {
-    display:none;
+    display: none;
 }
 
 .nav-toggle-label {
     font-size: 2rem;
-    
 }
 
 /* Main content */
 main {
-    
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
-/* Hero Section */
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
-    background:url(../images/hero-image.webp) no-repeat center center/cover;
-    position: relative
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
 }
 
 #cover-text {
-    /* Final value here sets the transparency */
-background-color: rgba(241, 109, 107, 0.7);
-font-size: 130%;
-position: absolute;
-bottom: 30px;
-width: 80%;
-min-height: 200px;
-padding-top: 40px;
-padding-left: 10px;
-
-
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
 }
 
-#cover-text > h3, #cover-text > h2 {
-    color: #ffffff
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff;
+}
+
+/* Reasons section */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits-physical > div,
+#benefits-mental > div {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+#benefits p {
+    padding: 0 20px;
+}
+
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
 }
 
 /* Footer */
@@ -134,56 +155,51 @@ padding-left: 10px;
     color: #3a3a3a;
 }
 
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
 
-/* Media Query For Tablets */
-@media screen and (min-width: 768px){
+    #menu {
+        display: flex;
+    }
 
-/* Header for Tablets */
-nav {
-    display: block;
-    position: relative;
-    box-shadow: none;
-    width: fit-content;
-    padding-right: 1em ;
-}
-#menu {
-    display: flex;
-}
+    #menu > li {
+        padding-left: 1rem;
+    }
 
-#menu > li {
-    padding-left: 1rem;
-}
-.nav-toggle-label {
-    display:none;
-}
-  
-#logo {
-    font-size: 200%;
-    line-height: 75px;
-    margin: 0 0.5 rem;
-}
-/* main content */
+    .nav-toggle-label {
+        display: none;
+    }
 
-main {
-   /* pushing main content down to make room for larger header*/ 
-    margin-top: 79px;
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+
+    /* Hero */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
 }
 
-/*  Hero Section */
-#cover-text {
-    width: 300px;
-    right: 50px;
-}
-
-} 
-
-/* Media Query For Laptops and larger screens */
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-
-#menu a:hover  {
-
-    border-bottom: 1px solid #3a3a3a;
-}
-
-
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
+    }
 }
