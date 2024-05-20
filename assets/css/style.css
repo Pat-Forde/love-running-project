@@ -156,6 +156,33 @@ justify-content: center;
     max-height: 300px;
 }
 
+/* Run Times Section */
+#times
+{
+    background: url("../images/dublin-city.webp") no-repeat center center/cover;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    text-align: center;
+    /* This will stop screens lower than 400px wide from expanding - Each div will expand to fill the screen */
+    flex-basis: 200px;
+    flex-grow: 1;
+/* Creates a grid affect for the meetup times */
+    border: 2px solid #ffffff;
+}
+
+#times div h3 {
+    color: #fafafa;
+}
+
+
+
 
 /* Footer */
 #social-networks {
